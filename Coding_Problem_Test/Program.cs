@@ -21,11 +21,12 @@ namespace Coding_Problem_Test
             {
                 for (int j = 1; j < tab.Length; j++)
                 {
-                    result = tab[i] + tab[j];
+                    result = tab[i] + tab[j]; 
 
                     if (result == k)
                     {
-                        return true;
+                        //return true;
+                        Console.WriteLine(i + " " + j);
                     }
 
                 }
