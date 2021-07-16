@@ -19,7 +19,7 @@ namespace Coding_Problem_Test
             var watch = Stopwatch.StartNew();
             Check();
             watch.Stop();
-            Console.WriteLine("Execution for " + arraySize + " random items: " + countKNumbers + " elapsed time: "+ watch.Elapsed + " Seconds.");
+            Console.WriteLine("Execution for " + arraySize + " random items: " + countKNumbers + " elapsed time: "+ watch.Elapsed + " seconds.");
             Console.ReadKey();
         }
 
