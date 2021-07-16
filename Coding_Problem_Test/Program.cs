@@ -10,7 +10,7 @@ namespace Coding_Problem_Test
             Console.ReadKey();
         }
 
-        public static int[] tab = new int[4] { 10, 15, 3, 7 };
+        public static int[] tab = new int[4];
         public static int k = 17;
 
 
@@ -32,6 +32,18 @@ namespace Coding_Problem_Test
                 }
             }
             return false;
+        }
+
+        public static void RandomArray()
+        {
+            int Min = 0;
+            int Max = 10;
+
+            Random randNum = new Random();
+            for (int i = 0; i < tab.Length; i++)
+            {
+                tab[i] = randNum.Next(Min, Max);
+            }
         }
     }
 }
