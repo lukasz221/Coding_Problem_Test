@@ -5,7 +5,7 @@ namespace Coding_Problem_Test
 {
     class Program
     {
-        public static int arraySize = 400;
+        public static int arraySize = 40000;
         public static int[] array = new int[arraySize];
         public static int k = 17;
         public static int countKNumbers = 0;
@@ -19,7 +19,7 @@ namespace Coding_Problem_Test
             var watch = Stopwatch.StartNew();
             Check();
             watch.Stop();
-            Console.WriteLine("Execution for " + arraySize + " random items: " + countKNumbers + " elapsed time: "+ watch.Elapsed + " seconds.");
+            Console.WriteLine("Execution for " + arraySize + " random items: " + countKNumbers + " elapsed time: "+ watch.Elapsed + " Seconds.");
             Console.ReadKey();
         }
 
