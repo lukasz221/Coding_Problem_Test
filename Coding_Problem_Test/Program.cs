@@ -6,11 +6,12 @@ namespace Coding_Problem_Test
     {
         static void Main(string[] args)
         {
+            RandomArray();
             Console.WriteLine(Check().ToString());
             Console.ReadKey();
         }
 
-        public static int[] tab = new int[4];
+        public static int[] tab = new int[400];
         public static int k = 17;
 
 
