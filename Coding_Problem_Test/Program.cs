@@ -14,8 +14,6 @@ namespace Coding_Problem_Test
         public static int countKNumbers1 = 0;
         public static int countKNumbers2 = 0;
 
-        public static int[] smallArray = new int[] { 11, 2, 8, 11, 9,};
-
         public static int Min = 0;
         public static int Max = 10;
 
@@ -26,20 +24,19 @@ namespace Coding_Problem_Test
 
             var watch1 = Stopwatch.StartNew();
 
-            var r1 = Method1(smallArray, k);
+            Method1(array, k);
             watch1.Stop();
-            Console.WriteLine("Execution for Method 1 array size: " + smallArray.Length + " items: " + r1.ToString() + " elapsed time: " + watch1.Elapsed + " seconds.");
+            Console.WriteLine("Execution for Method 1 array size: " + array.Length + " items: " + countKNumbers1 + " elapsed time: " + watch1.Elapsed + " seconds.");
             
             var watch2 = Stopwatch.StartNew();
-
-            var r2 = Method2(smallArray, k);
+            Method2(array, k);
             watch2.Stop();
-            Console.WriteLine("Execution for Method 2 array size: " + smallArray.Length + " items: " + r2.ToString() + " elapsed time: " + watch2.Elapsed + " seconds.");
+            Console.WriteLine("Execution for Method 2 array size: " + array.Length + " items: " + countKNumbers2 + " elapsed time: " + watch2.Elapsed + " seconds.");
 
             Console.ReadKey();
         }
 
-        public static bool Method1(int[] array, int k)
+        public static void Method1(int[] array, int k)
         {
             bool check = false;
 
@@ -51,13 +48,12 @@ namespace Coding_Problem_Test
 
                 if (check)
                 {
-                    return true;
+                    countKNumbers1 += 1;
                 }
             }
-            return false;
         }
 
-        public static bool Method2(int[] array, int k)
+        public static void Method2(int[] array, int k)
         {
             int result;
 
@@ -69,11 +65,10 @@ namespace Coding_Problem_Test
 
                     if (result == k)
                     {
-                        return true;
+                        countKNumbers2 += 1;
                     }
                 }
             }
-            return false;
         }
 
         public static void RandomArray()
