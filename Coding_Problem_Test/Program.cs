@@ -7,11 +7,7 @@ namespace Coding_Problem_Test
 {
     class Program
     {
-
         public static int k = 17;
-
-        public static int countKNumbers1 = 0;
-        public static int countKNumbers2 = 0;
 
         public static int[] smallArray = new int[] { 1, 2, 7, 11, 9,};
 
