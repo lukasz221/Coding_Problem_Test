@@ -7,7 +7,7 @@ namespace Coding_Problem_Test
 {
     class Program
     {
-        public static int arraySize = 4000;
+        public static int arraySize = 40000;
         public static int[] array = new int[arraySize];
         public static int k = 17;
 
