@@ -7,23 +7,13 @@ namespace Coding_Problem_Test
 {
     class Program
     {
-        public static int arraySize = 40000;
-        public static int[] array = new int[arraySize];
         public static int k = 17;
 
-        public static int countKNumbers1 = 0;
-        public static int countKNumbers2 = 0;
-
         public static int[] smallArray = new int[] { 11, 2, 8, 11, 9,};
-
-        public static int Min = 0;
-        public static int Max = 10;
 
 
         static void Main(string[] args)
         {
-            RandomArray();
-
             var watch1 = Stopwatch.StartNew();
 
             var r1 = Method1(smallArray, k);
@@ -74,15 +64,6 @@ namespace Coding_Problem_Test
                 }
             }
             return false;
-        }
-
-        public static void RandomArray()
-        {
-            Random randNum = new Random();
-            for (int i = 0; i < array.Length; i++)
-            {
-                array[i] = randNum.Next(Min, Max);
-            }
         }
     }
 }
