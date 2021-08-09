@@ -9,10 +9,12 @@ namespace Coding_Problem_Test
     {
         public static int arraySize = 40000;
         public static int[] array = new int[arraySize];
-        public static int k = 17;
+        public static int[] array2 = new int[] { 10, 6, 6 };
+        public static int k = 16;
 
         public static int countKNumbers1 = 0;
         public static int countKNumbers2 = 0;
+        public static int countKNumbers3 = 0;
 
         public static int Min = 0;
         public static int Max = 10;
@@ -27,16 +29,39 @@ namespace Coding_Problem_Test
             Method1(array, k);
             watch1.Stop();
             Console.WriteLine("Execution for Method 1 array size: " + array.Length + " random items: " + countKNumbers1 + " elapsed time: " + watch1.Elapsed + " seconds.");
-            
+
             var watch2 = Stopwatch.StartNew();
             Method2(array, k);
             watch2.Stop();
             Console.WriteLine("Execution for Method 2 array size: " + array.Length + " random items: " + countKNumbers2 + " elapsed time: " + watch2.Elapsed + " seconds.");
+            
+            var watch3 = Stopwatch.StartNew();
+            Method3(array, k);
+            watch3.Stop();
+            Console.WriteLine("Execution for Method 3 array size: " + array.Length + " random items: " + countKNumbers2 + " elapsed time: " + watch3.Elapsed + " seconds.");
 
             Console.ReadKey();
         }
 
         public static void Method1(int[] array, int k)
+        {
+            int result;
+
+            for (int i = 0; i < array.Length; i++)
+            {
+                for (int j = 1; j < array.Length; j++)
+                {
+                    result = array[i] + array[j];
+
+                    if (result == k)
+                    {
+                        countKNumbers1 += 1;
+                    }
+                }
+            }
+        }
+
+        public static void Method2(int[] array, int k)
         {
             bool check = false;
 
@@ -48,28 +73,29 @@ namespace Coding_Problem_Test
 
                 if (check)
                 {
-                    countKNumbers1 += 1;
+                    check = false;
+                    countKNumbers2 += 1;
                 }
             }
         }
 
-        public static void Method2(int[] array, int k)
+        private static void Method3(int[] array, int k)
         {
-            int result;
+            bool check = false;
 
-            for (int i = 0; i < array.Length; i++)
+            HashSet<int> hash = new HashSet<int>();
+
+            foreach (var item in hash)
             {
-                for (int j = 0; j < array.Length; j++)
-                {
-                    result = array[i] + array[j];
+                check = hash.Contains(k - item);
 
-                    if (result == k)
-                    {
-                        countKNumbers2 += 1;
-                    }
+                if (check)
+                {
+                    countKNumbers3 += 1;
                 }
             }
         }
+
 
         public static void RandomArray()
         {
